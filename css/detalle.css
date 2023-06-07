@@ -1,0 +1,54 @@
+/* Estilos para la página de administración */
+/* root: 
+	--#FAF9F7
+	#F1F1EF
+	#080C17
+	#DADAD8
+ */
+
+:root {
+  --creame-color1: #FAF9F7;
+  --creame-color2: #F1F1EF;
+  --creame-color3: #080C17;
+  --creame-color4: #DADAD8;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0; background-color: var(--creame-color1);
+}
+
+.logoD {
+	max-width:20%;
+}
+
+h1 {
+	text-align: center;
+}
+
+.boton-css{
+	width: 20%;
+}
+
+.boton-b {
+	padding: 5px 10px;
+	border: none;
+	background-color: #4caf50;
+	color: white;
+	cursor: pointer;
+}
+
+.boton-b:hover {
+	background-color: #45a049;
+}
+
+	/* Estilos personalizados para el footer */
+.footer {
+	background-color: #7c7b7b;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.footer p {
+	margin-bottom: 0;
+}
