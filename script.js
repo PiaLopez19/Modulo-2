@@ -1,4 +1,17 @@
-// Base de productos predeterminado
+function autorizacionAdministracion() {
+  let usuario = prompt('Ingrese el usuario')
+  let contrasenia = prompt('Ingrese la contraseña')
+
+  if(usuario === "admin" && contrasenia === "admin") {
+    return true;
+  }
+  else {
+    window.location.href = "https://www.google.com";
+  }
+}
+
+autorizacionAdministracion();
+
 let productos = [
   {
     id: 1,
@@ -20,40 +33,14 @@ let productos = [
   }
 ];
 
-// Generamos las fila y cada valor de la celdas
-// function generarFilaProducto(producto) {
-//   let fila = document.createElement('tr'); // Defino la linea
-
-//   let idCelda = document.createElement('td'); // Defino la celda
-//   idCelda.textContent = producto.id;
-//   fila.appendChild(idCelda);
-
-//   let nombreCelda = document.createElement('td'); // Defino la celda
-//   nombreCelda.textContent = producto.nombre;
-//   fila.appendChild(nombreCelda);
-
-//   let descripcionCelda = document.createElement('td'); // Defino la celda
-//   descripcionCelda.textContent = producto.descripcion;
-//   fila.appendChild(descripcionCelda);
-
-//   let precioCelda = document.createElement('td'); // Defino la celda
-//   precioCelda.textContent = producto.precio;
-//   fila.appendChild(precioCelda);
-
-//   // let borrarCelda = document.createElement('td btn'); // Defino la celda
-//   // fila.appendChild(borrarCelda);
-
-//   return fila;
-// }
-
 function generarFilaProducto(producto) {
-  const fila = document.createElement('tr'); // Defino la línea
+  const fila = document.createElement('tr');
 
   const celdas = ['id', 'nombre', 'descripcion', 'precio'];
 
   for (const propiedad of celdas) {
-    const celda = document.createElement('td'); // Defino la celda
-    celda.textContent = producto[propiedad];
+    const celda = document.createElement('td');
+    celda.innerText = producto[propiedad];
     fila.appendChild(celda);
   }
 
@@ -70,13 +57,11 @@ function cargarProductos() {
   });
 }
 
-// Cargamos los productos
 cargarProductos();
 
-// Crear el objeto nuevo para agregar el producto
 class NuevoProducto {
   constructor(nombre, descripcion, precio) {
-    this.id = productos.length + 1; // Obtén el ID secuencial sumando 1 al último ID existente
+    this.id = productos.length + 1;
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;
@@ -95,8 +80,56 @@ class NuevoProducto {
 let productoCreado1 = new NuevoProducto("Remera Puma", "Gris comun - Talle M", "$11.000");
 productoCreado1.crearProducto();
 
-// Muestra el arreglo de productos actualizado
 console.log(productos); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Aclaraciones
