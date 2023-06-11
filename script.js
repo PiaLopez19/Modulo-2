@@ -1,3 +1,5 @@
+/************** AUTORIZACION DE ADMINISTRACION ****************/
+
 function autorizacionAdministracion() {
   let usuario = prompt('Ingrese el usuario')
   let contrasenia = prompt('Ingrese la contraseña')
@@ -6,11 +8,14 @@ function autorizacionAdministracion() {
     return true;
   }
   else {
+    alert('El usuario ingresado es incorrecto')
     window.location.href = "https://www.google.com";
   }
 }
 
 autorizacionAdministracion();
+
+/**************** PRODUCTOS *******************/
 
 let productos = [
   {
@@ -27,11 +32,43 @@ let productos = [
   },
   {
     id: 3,
-    nombre: "Zapatillas Air Max ",
+    nombre: "Zapatillas Air Max",
+    descripcion: "Estilo Genome - Blancas - 42",
+    precio: "$32.000"
+  },
+  {
+    id: 4,
+    nombre: "Pantalon adidas Essential",
+    descripcion: "Essentials 3 tiras  - Negras - 38",
+    precio: "$19.000"
+  },
+  {
+    id: 5,
+    nombre: "Musculosa Dama Verano 2023",
+    descripcion: "Negro - 34",
+    precio: "$14.000"
+  },
+  {
+    id: 6,
+    nombre: "Zapatillas Air Max",
+    descripcion: "Estilo Genome - Blancas - 42",
+    precio: "$32.000"
+  },
+  {
+    id: 7,
+    nombre: "Zapatillas Air Max",
+    descripcion: "Estilo Genome - Blancas - 42",
+    precio: "$32.000"
+  },
+  {
+    id: 8,
+    nombre: "Zapatillas Air Max",
     descripcion: "Estilo Genome - Blancas - 42",
     precio: "$32.000"
   }
 ];
+
+/********************* GENERAMOS LAS FILAS Y LAS CELDAS ******************/
 
 function generarFilaProducto(producto) {
   const fila = document.createElement('tr');
@@ -43,6 +80,16 @@ function generarFilaProducto(producto) {
     celda.innerText = producto[propiedad];
     fila.appendChild(celda);
   }
+
+  let botonEditar = document.createElement('td');
+  botonEditar.innerHTML = '<button>Editar</button>';
+  fila.appendChild(botonEditar)
+ // botonEditar.addEventListener('click', crearNuevoProducto);
+
+  let botonBorrar = document.createElement('td');
+  botonBorrar.innerHTML = '<button>Borrar</button>';
+  fila.appendChild(botonBorrar)
+  //botonBorrar.addEventListener('click', crearNuevoProducto);
 
   return fila;
 }
@@ -58,6 +105,8 @@ function cargarProductos() {
 }
 
 cargarProductos();
+
+/******************** CREAR NUEVO PRODUCTO *****************/
 
 class NuevoProducto {
   constructor(nombre, descripcion, precio) {
@@ -77,8 +126,31 @@ class NuevoProducto {
   }
 }
 
-let productoCreado1 = new NuevoProducto("Remera Puma", "Gris comun - Talle M", "$11.000");
-productoCreado1.crearProducto();
+/********************* BOTON DE AGREGAR PRODUCTO ******************/
+
+function crearNuevoProducto() {
+  const nombreProducto = prompt('Ingrese el nombre del producto');
+  const detalleProducto = prompt('Ingrese el detalle del producto');
+  const precioProducto = prompt('Ingrese el precio del producto');
+
+  if (nombreProducto && detalleProducto && precioProducto) {
+    const productoCreado = new NuevoProducto(nombreProducto, detalleProducto, precioProducto);
+    productoCreado.crearProducto();
+    cargarProductos();
+  } 
+  else {
+    alert('Por favor, ingrese todos los datos del producto');
+  }
+}
+
+function crearBotonCrearProducto() {
+  const botonAgregar = document.querySelector('.crear-objeto');
+  botonAgregar.innerHTML = '<button>Agregar producto</button>';
+
+  botonAgregar.addEventListener('click', crearNuevoProducto);
+}
+
+crearBotonCrearProducto();
 
 console.log(productos); 
 

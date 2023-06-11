@@ -12,6 +12,15 @@ body {
 	margin: 0;
 }
 
+.crear-objeto {
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	margin-right: 10vh;
+	text-align: right;
+	/* align-items: center; */
+}
+
 h1 {
 	text-align: center;
 }
