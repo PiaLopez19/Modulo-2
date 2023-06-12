@@ -1,10 +1,4 @@
 /* Estilos para la página de administración */
-/* root: 
-	--#FAF9F7
-	#F1F1EF
-	#080C17
-	#DADAD8
- */
 
 /* :root {
   --creame-color1: #FAF9F7;
@@ -16,6 +10,15 @@
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
+}
+
+.crear-objeto {
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	margin-right: 10vh;
+	text-align: right;
+	/* align-items: center; */
 }
 
 h1 {

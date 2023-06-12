@@ -1,4 +1,22 @@
-// Base de productos predeterminado
+/************** AUTORIZACION DE ADMINISTRACION ****************/
+
+function autorizacionAdministracion() {
+  let usuario = prompt('Ingrese el usuario')
+  let contrasenia = prompt('Ingrese la contraseña')
+
+  if(usuario === "admin" && contrasenia === "admin") {
+    return true;
+  }
+  else {
+    alert('El usuario ingresado es incorrecto')
+    window.location.href = "https://www.google.com";
+  }
+}
+
+autorizacionAdministracion();
+
+/**************** PRODUCTOS *******************/
+
 let productos = [
   {
     id: 1,
@@ -14,48 +32,64 @@ let productos = [
   },
   {
     id: 3,
-    nombre: "Zapatillas Air Max ",
+    nombre: "Zapatillas Air Max",
+    descripcion: "Estilo Genome - Blancas - 42",
+    precio: "$32.000"
+  },
+  {
+    id: 4,
+    nombre: "Pantalon adidas Essential",
+    descripcion: "Essentials 3 tiras  - Negras - 38",
+    precio: "$19.000"
+  },
+  {
+    id: 5,
+    nombre: "Musculosa Dama Verano 2023",
+    descripcion: "Negro - 34",
+    precio: "$14.000"
+  },
+  {
+    id: 6,
+    nombre: "Zapatillas Air Max",
+    descripcion: "Estilo Genome - Blancas - 42",
+    precio: "$32.000"
+  },
+  {
+    id: 7,
+    nombre: "Zapatillas Air Max",
+    descripcion: "Estilo Genome - Blancas - 42",
+    precio: "$32.000"
+  },
+  {
+    id: 8,
+    nombre: "Zapatillas Air Max",
     descripcion: "Estilo Genome - Blancas - 42",
     precio: "$32.000"
   }
 ];
 
-// Generamos las fila y cada valor de la celdas
-// function generarFilaProducto(producto) {
-//   let fila = document.createElement('tr'); // Defino la linea
-
-//   let idCelda = document.createElement('td'); // Defino la celda
-//   idCelda.textContent = producto.id;
-//   fila.appendChild(idCelda);
-
-//   let nombreCelda = document.createElement('td'); // Defino la celda
-//   nombreCelda.textContent = producto.nombre;
-//   fila.appendChild(nombreCelda);
-
-//   let descripcionCelda = document.createElement('td'); // Defino la celda
-//   descripcionCelda.textContent = producto.descripcion;
-//   fila.appendChild(descripcionCelda);
-
-//   let precioCelda = document.createElement('td'); // Defino la celda
-//   precioCelda.textContent = producto.precio;
-//   fila.appendChild(precioCelda);
-
-//   // let borrarCelda = document.createElement('td btn'); // Defino la celda
-//   // fila.appendChild(borrarCelda);
-
-//   return fila;
-// }
+/********************* GENERAMOS LAS FILAS Y LAS CELDAS ******************/
 
 function generarFilaProducto(producto) {
-  const fila = document.createElement('tr'); // Defino la línea
+  const fila = document.createElement('tr');
 
   const celdas = ['id', 'nombre', 'descripcion', 'precio'];
 
   for (const propiedad of celdas) {
-    const celda = document.createElement('td'); // Defino la celda
-    celda.textContent = producto[propiedad];
+    const celda = document.createElement('td');
+    celda.innerText = producto[propiedad];
     fila.appendChild(celda);
   }
+
+  let botonEditar = document.createElement('td');
+  botonEditar.innerHTML = '<button>Editar</button>';
+  fila.appendChild(botonEditar)
+ // botonEditar.addEventListener('click', crearNuevoProducto);
+
+  let botonBorrar = document.createElement('td');
+  botonBorrar.innerHTML = '<button>Borrar</button>';
+  fila.appendChild(botonBorrar)
+  //botonBorrar.addEventListener('click', crearNuevoProducto);
 
   return fila;
 }
@@ -70,13 +104,13 @@ function cargarProductos() {
   });
 }
 
-// Cargamos los productos
 cargarProductos();
 
-// Crear el objeto nuevo para agregar el producto
+/******************** CREAR NUEVO PRODUCTO *****************/
+
 class NuevoProducto {
   constructor(nombre, descripcion, precio) {
-    this.id = productos.length + 1; // Obtén el ID secuencial sumando 1 al último ID existente
+    this.id = productos.length + 1;
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;
@@ -92,11 +126,82 @@ class NuevoProducto {
   }
 }
 
-let productoCreado1 = new NuevoProducto("Remera Puma", "Gris comun - Talle M", "$11.000");
-productoCreado1.crearProducto();
+/********************* BOTON DE AGREGAR PRODUCTO ******************/
 
-// Muestra el arreglo de productos actualizado
+function crearNuevoProducto() {
+  const nombreProducto = prompt('Ingrese el nombre del producto');
+  const detalleProducto = prompt('Ingrese el detalle del producto');
+  const precioProducto = prompt('Ingrese el precio del producto');
+
+  if (nombreProducto && detalleProducto && precioProducto) {
+    const productoCreado = new NuevoProducto(nombreProducto, detalleProducto, precioProducto);
+    productoCreado.crearProducto();
+    cargarProductos();
+  } 
+  else {
+    alert('Por favor, ingrese todos los datos del producto');
+  }
+}
+
+function crearBotonCrearProducto() {
+  const botonAgregar = document.querySelector('.crear-objeto');
+  botonAgregar.innerHTML = '<button>Agregar producto</button>';
+
+  botonAgregar.addEventListener('click', crearNuevoProducto);
+}
+
+crearBotonCrearProducto();
+
 console.log(productos); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Aclaraciones
