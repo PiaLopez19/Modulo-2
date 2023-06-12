@@ -40,23 +40,74 @@
   </nav>
   <main class="mt-5">
   <h1 id="titulo">Pagina de Administracion</h1>
-    <table id="productos-table">
-      <div class="crear-objeto">
+    <div class="row mb-2">
+      <div class="col-6"></div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nuevo producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">ID</span>
+                  <input type="text" id="id-producto" class="form-control" placeholder="Numero de ID" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <label for="basic-url" class="form-label">Nombre</label>
+                  <div class="input-group">
+                    <input type="text" id="nombre-producto" class="form-control" placeholder="Nombre del producto" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <label for="basic-url" class="form-label">Detalle</label>
+                  <div class="input-group">
+                    <input type="text" id="detalle-producto" class="form-control" placeholder="Detalle de lo comprado" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <label for="basic-url" class="form-label">Precio</label>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" id="precio-producto" class="form-control" placeholder="1.000" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" id="agregar-producto"class="btn btn-success">Agregar</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Descripcion</th>
-          <th>Precio</th>
-          <th>Editar</th>
-          <th>Borrar</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-      </tbody>
-    </table>
+      <!-- Modal -->
+
+      <div class="crear-objeto col-3"></div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <table id="productos-table" class="col-6 border justify-content-center">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div class="col-3"></div>
+    </div>
   </main>
   <footer class="footer mt-3">
     <div class="container">

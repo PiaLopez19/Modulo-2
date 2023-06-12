@@ -5,7 +5,7 @@ function autorizacionAdministracion() {
   let contrasenia = prompt('Ingrese la contraseña')
 
   if(usuario === "admin" && contrasenia === "admin") {
-    return true;
+    alert('Iniciaste sesion correctamente =)')
   }
   else {
     alert('El usuario ingresado es incorrecto')
@@ -82,14 +82,14 @@ function generarFilaProducto(producto) {
   }
 
   let botonEditar = document.createElement('td');
-  botonEditar.innerHTML = '<button>Editar</button>';
+  botonEditar.innerHTML = '<button class="rounded">Editar</button>';
   fila.appendChild(botonEditar)
- // botonEditar.addEventListener('click', crearNuevoProducto);
+ // botonEditar.addEventListener('click', editarFilaProducto);
 
   let botonBorrar = document.createElement('td');
-  botonBorrar.innerHTML = '<button>Borrar</button>';
+  botonBorrar.innerHTML = '<button class="rounded">Borrar</button>';
   fila.appendChild(botonBorrar)
-  //botonBorrar.addEventListener('click', crearNuevoProducto);
+  //botonBorrar.addEventListener('click', borrarFilaProducto);
 
   return fila;
 }
@@ -128,29 +128,48 @@ class NuevoProducto {
 
 /********************* BOTON DE AGREGAR PRODUCTO ******************/
 
-function crearNuevoProducto() {
-  const nombreProducto = prompt('Ingrese el nombre del producto');
-  const detalleProducto = prompt('Ingrese el detalle del producto');
-  const precioProducto = prompt('Ingrese el precio del producto');
+function crearBotonCrearProducto() {
+  const botonAgregar = document.querySelector('.crear-objeto');
+  botonAgregar.innerHTML = `<button 
+    type="button" 
+    class="btn btn-success" 
+    data-bs-toggle="modal" 
+    data-bs-target="#exampleModal">Agregar producto
+    </button>`;
+
+  guardarProducto();
+}
+
+crearBotonCrearProducto();
+
+function guardarProducto() {
+  const botonAgregar = document.querySelector('#agregar-producto');
+  botonAgregar.addEventListener('click', crearNuevoProducto);
+}
+
+function crearNuevoProducto(event) {
+
+  event.preventDefault();
+
+  const nombreProducto = document.getElementById('nombre-producto').value;
+  const detalleProducto = document.getElementById('detalle-producto').value;
+  const precioProducto = document.getElementById('precio-producto').value;
+
+  alert(`Producto cargado correctamente`)
 
   if (nombreProducto && detalleProducto && precioProducto) {
     const productoCreado = new NuevoProducto(nombreProducto, detalleProducto, precioProducto);
     productoCreado.crearProducto();
     cargarProductos();
+
+    document.getElementById('nombre-producto').value = '';
+    document.getElementById('detalle-producto').value = '';
+    document.getElementById('precio-producto').value = '';
   } 
   else {
     alert('Por favor, ingrese todos los datos del producto');
   }
 }
-
-function crearBotonCrearProducto() {
-  const botonAgregar = document.querySelector('.crear-objeto');
-  botonAgregar.innerHTML = '<button>Agregar producto</button>';
-
-  botonAgregar.addEventListener('click', crearNuevoProducto);
-}
-
-crearBotonCrearProducto();
 
 console.log(productos); 
 
