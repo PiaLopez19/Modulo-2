@@ -1,0 +1,87 @@
+/* let search = document.querySelector('#search') */
+ // agarro la etiqueta forma
+
+/* search.addEventListener('focus', function (event) { //esto lo que hace es crearme un evento que en este caos es el focus
+    console.log("se disparo el focus")
+})
+console.log(search); */
+
+
+//------------------------------CHANGE EVENT (es de escribir)----------------------------------
+
+/* search.addEventListener('change', function (event) { //esto lo que hace es crearme un evento que en este caos es el focus
+    console.log(event.target.value) // no se porque target, value es donde esta parado el nombre ne consola
+}) */
+
+//------------------------------SUBMIT EVENT ----------------------------------
+
+
+/* let search = document.querySelector('#search')
+let form = document.querySelector('form') // agarro la etiqueta form
+
+search.addEventListener('submit', function (event) {//esto lo que hace es crearme un evento que en este caso es cuando busco
+     event.preventDefault() //esto hace que al refrescar la pagina no se borren las cosas hay que ponerlo casi siempre
+    console.log(search.value) // search es por que es el input (es el ID) y value el valor y quiero que me muestre en consola
+}) */ // IMPORTANTE si hacemos un evento de tipo submit con un boton o input hay que aplicarle a la ETIQUETA FORMULARIO no al boton
+
+
+//------------------------------PARA BUSCAR Y QUE ME APAREZCA EL PRODUCTO-----------------------------
+
+let search = document.querySelector('#search')
+let searchproduct = document.querySelector('#search-product')
+let form = document.querySelector('form') // agarro la etiqueta form
+
+search.addEventListener('submit', function (event) {//esto lo que hace es crearme un evento que en este caso es cuando busco
+     event.preventDefault() //esto hace que al refrescar la pagina no se borren las cosas hay que ponerlo casi siempre
+     let SearchFrut = fruts.find(function (frut) {
+        if (frut.name === search.value) return frut; {
+            
+        }
+     })
+     if (SearchFrut ==! undefined) {
+         searchproduct.innerHTML = '<h3> Producto Encontrado </h3>' 
+         let item =`
+         <p>${SearchFrut.url}</p>
+         <p>${SearchFrut.name}</p>
+         <p>${SearchFrut.price}</p>
+         ` ;
+         console.log(item);
+     }
+})// IMPORTANTE si hacemos un evento de tipo submit con un boton o input hay que aplicarle a la ETIQUETA FORMULARIO no al boton
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------PARA AGREGAR CARRITO CON BOTON-------------------------------
+
+ const frutsSection = document.querySelector('#fruts');
+let countCard = 0 //esto es para hacer un contador que este en 0
+
+function addCard(event) {
+    let itemCards = document.querySelector('#card') //con esto agarro el 0 que esta en el HTML
+    countCard = countCard + 1 //con esto aumento el numero de mi cero
+    itemCards.innerText = countCard //ahi estoy agarrando el 0 con item card, cambiando el texto con inner text y diciendo que es igual a count card para que se vaya sumando
+}
+
+fruts.forEach(function (frut) {
+    let card = document.createElement('div')
+    let item = `
+    <p>${frut.url}</p>
+    <p>${frut.name}</p>
+    <p>${frut.price}</p>
+    <button id=${frut.name} onclick="addCard(event)" >Comprar</button> 
+    `; //en lo que seria el button es donde agrego el evento que se llama on click y le agrego la funcion que cree arriba y le agrego parentisis para inicializar la funcion
+
+    card.innerHTML = item
+    frutsSection.appendChild(card)
+})
+ 
