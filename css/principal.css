@@ -71,6 +71,17 @@ h2 {
     transition: 0.5s;
 }
 
+#myinpunt{
+    width: 30%;
+}
+
+h3 {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
 /*.btn1 {
     height: 45px;
     width: 35%;
