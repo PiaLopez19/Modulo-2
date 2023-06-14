@@ -34,7 +34,26 @@ function filterProduct(value){
  showgallery(newArray)}
 }
 
-
+document.getElementById("myinput").addEventListener("keyup", function(){
+  let text = document.getElementById("myinput").value.toLowerCase();
+  
+  let filterarray = products.filter(function(a){
+    return a.name.toLowerCase().startsWith(text);
+  });
+  
+  if (this.value == "") {
+    showgallery(products);
+    document.getElementById("para").style.display = "none";
+  } else {
+    if (filterarray.length === 0) {
+      document.getElementById("para").style.display = "block";
+      document.getElementById("card").innerHTML = "";
+    } else {
+      showgallery(filterarray);
+      document.getElementById("para").style.display = "none";
+    }
+  }
+});
 
 
 
