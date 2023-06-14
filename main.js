@@ -24,5 +24,21 @@ for (var i= 0; i< curarray.length; i++) {
 }
 
 
+function filterProduct(value){
+  if (!value) { newArray = [...products] ; 
+  
+    showgallery(newArray)
+  }
+  
+  else {newArray = products.filter(item => item.category === value);
+ showgallery(newArray)}
+}
+
+
+
+
+
+
+
 
 
