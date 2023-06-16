@@ -23,8 +23,36 @@ h1 {
 	text-align: center;
 }
 
+.modal-content{
+	background-color: #DADAD8 !important;
+}
+
+
+
 .boton-css{
 	width: 20%;
+}
+
+.divCarrito{
+	background-color: #DADAD8;
+}
+
+@media screen and (min-width:992px){
+    .divImg{
+		max-width: 50%;
+	}
+	.divText{
+		margin-top:20%;
+	}
+}
+
+.imgCarrito{
+	max-width: 3%;
+}
+
+
+.remeraImg{
+	max-width: 70%;
 }
 
 
