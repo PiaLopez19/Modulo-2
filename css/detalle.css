@@ -27,6 +27,12 @@ h1 {
 	background-color: #DADAD8 !important;
 }
 
+.contenidoModal{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	overflow:scroll;
+}
 
 
 .boton-css{
