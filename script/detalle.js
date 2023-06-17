@@ -8,7 +8,7 @@ let card = document.createElement('div');
 card.classList.add("divtext");
 let card2 = document.createElement('div');
 card2.classList.add("divImg");
-let item2 = `<img class="remeraImg mx-auto d-block my-3" src="${product.src}" alt="${product.name}">`;
+let item2 = `<img class=" remeraImg mx-auto d-block my-3" src="${product.src}" alt="${product.name}">`;
 let item = `
   <h3 class= "pt-5">${product.name}</h3>
   <p class="pt-3">$${product.price}</p> <hr>
@@ -43,7 +43,7 @@ const showCar = () => {
   for (let i = 0; i < miCarrito.length; i++) {
     let product = miCarrito[i];
     let modalContenido = document.createElement("div");
-
+    modalContenido.classList.add('contenidoModal')
     modalContenido.innerHTML = `
       <h2> ${product.name} </h2>  <hr>
       <p class="text-center">$${product.price}</p>  <hr>
