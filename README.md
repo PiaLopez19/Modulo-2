@@ -16,7 +16,7 @@ Gestión de cuentas de usuario: Los usuarios pueden crear una cuenta, iniciar se
 Pagina de administracion: El administrador de la pagina puede agregar, editar y eliminar los productos que desea. <br>
 <br>
 # Tecnologías Utilizadas
-HTML5, CSS3 y JavaScript: Estas tecnologías se utilizan para la estructura, diseño y funcionalidad interactiva de la página web.
+HTML5, CSS3, JavaScript, Boostrap5, chartjs y figma: Estas tecnologías se utilizan para la estructura, diseño y funcionalidad interactiva de la página web.
 <br>
 # Instalación
 https://github.com/PiaLopez19/Modulo-2.git
