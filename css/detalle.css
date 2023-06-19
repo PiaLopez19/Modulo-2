@@ -32,9 +32,13 @@ h1 {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	overflow:scroll;
 }
 
+.eliminar-product{
+	cursor: pointer;
+	display: flex;
+	justify-content: end;
+}
 
 .boton-css{
 	width: 20%;
