@@ -13,7 +13,7 @@ let item = `
   <h3 class= "mx-3 text-start pt-5">${product.name}</h3>
   <p class="pt-3 text-start mx-3">$${product.price}</p> <hr>
   <p class="pt-3 text-start mx-3">ID:${product.id}</p> <hr>
-  <p class="py-3 px-5 text-start mx-3 ">${product.decription}</p>
+  <p class="py-3 px-5 text-start mx-3 ">${product.description}</p>
   <p class="pt-3 text-center fw-bold text-start mx-3">*${product.stock}</p>
   <button class="agregar-carrito my-3 w-75 mb-5 btn btn-danger border border-black" id="${product.name}" onclick="addCard()">Agregar al Carrito</button> 
 `;
