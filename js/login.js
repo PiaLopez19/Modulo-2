@@ -1,5 +1,6 @@
 /************** AUTORIZACION DE ADMINISTRACION ****************/
 
+
 let botonIniciar = document.getElementById('formulario')
 botonIniciar.addEventListener('submit', function(event) {
   event.preventDefault()

@@ -1660,12 +1660,12 @@ let letras = ["Z", "CN", "CA", "AX", "PA"];
 
 document.write(letras + "<br>");
 
-let resultado = letras.filter(numero=> document.write(numero + "<br>"));
-let resultado = letras.filter((numero)=>{
+let resultado = letras.forEach(numero=> document.write(numero + "<br>"));
+let resultado = letras.forEach((numero)=>{
 	 document.write(numero + "<br>"));
 }
 
-let resultado = letras.filter(function(numero)=>{
+let resultado = letras.forEach(function(numero)=>{
 	 document.write(numero + "<br>"));
 }
 

@@ -5,6 +5,9 @@
   --creame-color2: #F1F1EF;
   --creame-color3: #080C17;
   --creame-color4: #DADAD8;
+  --creame-color5: #8cc7da;
+  --creame-color6: #76d8a7;
+  --creame-color7: #51ac7e;
 } 
 
 /* Caracteristicas generales del BODY */
@@ -28,14 +31,30 @@ main {
 	padding: 0;
 }
 
+h1 {
+	text-align: center;
+}
+
 /******* Parte FORM de la pagina ********/
+
+.recupero {
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+	text-decoration: none;
+	color: var(--creame-color3);
+}
+
+.recupero:hover {
+	color: var(--creame-color7);
+}
 
 .login-form {
 	width: 350px;
 	padding: 20px;
 	border: 1px solid #000000;
 	border-radius: 10px;
-	background-color: #f2f2f2;
+	background-color: var(--creame-color4);
 }
 
 .login-form input[type="text"],
@@ -77,11 +96,7 @@ main {
 	background-color: #5a2e2e;
 }
 
-/******* Parte NAV de la pagina ********/
-
-h1 {
-	text-align: center;
-}
+/******* Parte FOOTER de la pagina ********/
 
 .footer {
 	margin: 0;
