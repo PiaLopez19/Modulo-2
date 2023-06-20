@@ -17,7 +17,7 @@ for (var i= 0; i< curarray.length; i++) {
             </div>
           </div>
           <h6>${curarray[i].name}</h6>
-          <p>${curarray[i].price}</p>
+          <p>$${curarray[i].price}</p>
         </div>
     `    
 }
@@ -30,14 +30,14 @@ function filterProduct(value){
     showgallery(newArray)
   }
   
-  else {newArray = products.filter(item => item.category === value);
+  else {newArray = galeryarray.filter(item => item.category === value);
  showgallery(newArray)}
 }
 
 document.getElementById("myinput").addEventListener("keyup", function(){
   let text = document.getElementById("myinput").value.toLowerCase();
   
-  let filterarray = products.filter(function(a){
+  let filterarray = galeryarray.filter(function(a){
     return a.name.toLowerCase().startsWith(text);
   });
   

@@ -8,7 +8,7 @@ let card = document.createElement('div');
 card.classList.add("divtext");
 let card2 = document.createElement('div');
 card2.classList.add("divImg");
-let item2 = `<img class=" remeraImg mx-auto d-block my-3" src="${product.src}" alt="${product.name}">`;
+let item2 = `<img class=" remeraImg mx-auto d-block my-3" src="../${product.src}" alt="${product.name}">`;
 let item = `
   <h3 class= "mx-3 text-start pt-5">${product.name}</h3>
   <p class="pt-3 text-start mx-3">$${product.price}</p> <hr>
@@ -47,7 +47,7 @@ const showCar = () => {
     modalContenido.innerHTML = `
       <h3> ${product.name} </h3>  <hr>
       <p class="text-center">$${product.price}</p>  <hr>
-      <img class="center-block remeraImg mx-auto d-block" src="${product.img}" alt="${product.name}">  <hr>
+      <img class="center-block remeraImg mx-auto d-block" src="../${product.img}" alt="${product.name}">  <hr>
       <p class="text-center">ID:${product.id}</p>
     `;
 
