@@ -1,70 +1,59 @@
-/************** AUTORIZACION DE ADMINISTRACION ****************/
-
-// function autorizacionAdministracion() {
-//   let usuario = prompt('Ingrese el usuario')
-//   let contrasenia = prompt('Ingrese la contraseña')
-
-//   if(usuario === "admin" && contrasenia === "admin") {
-//     alert('Iniciaste sesion correctamente =)')
-//   }
-//   else {
-//     alert('El usuario ingresado es incorrecto')
-//     window.location.href = "https://www.google.com";
-//   }
-// }
-
-// autorizacionAdministracion();
-
 /**************** PRODUCTOS *******************/
 
 let productos = [
   {
-    id: 1,
-    nombre: "Camiseta de la Seleccion Argentina",
-    descripcion: "Con 3 estrellas - Celesta y blanca - Talle M",
-    precio: "$15.000"
+    id: 1236,
+    nombre: "Remera Under Armour Live GPs",
+    descripcion: "Cuello acanalado - 60%A/40%P",
+    precio: "$11.499"
   },
   {
-    id: 2,
-    nombre: "Nike Dri-FIT Phenom Elite",
-    descripcion: "Pantalon largo - Negro - Talle 40",
-    precio: "$12.000"
+    id: 3256,
+    nombre: "Short Project Rock Fleece Mujer",
+    descripcion: "Tejido Fleece - Amplia cintura elástica",
+    precio: "$14.499"
   },
   {
-    id: 3,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
+    id: 6589,
+    nombre: "Calzas UA RUSH™ No-Slip Waistband Full-Length",
+    descripcion: "Capilariza el sudor y se seca rapido",
+    precio: "$26.999"
+  },
+  {
+    id: 2365,
+    nombre: "Pantalon corto UA Rival Fleece Graphic para Hombre",
+    descripcion: "Cintura elástica - Tejido Fleece - Bolsillos abiertos",
+    precio: "$14.499"
+  },
+  {
+    id: 9856,
+    nombre: "Remera UA RUSH™ Energy para hombre",
+    descripcion: "Tejido Fleece - Suave - Amplia",
+    precio: "$16.499"
+  },
+  {
+    id: 8649,
+    nombre: "Camiseta Titular Argentina 3 Estrellas 2022",
+    descripcion: "Tecnología infrarroja - Material elástico",
+    precio: "$28.999"
+  },
+  {
+    id: 5698,
+    nombre: "Remera de entrenamiento Under Armour Sportstyle",
+    descripcion: "Cuello acanalado - Algodón super suave",
+    precio: "$9.999"
+  },
+  {
+    id: 9695,
+    nombre: "Remera manga corta UA Multilogo Short Sleeve",
+    descripcion: "Tejido supersuave - Cuello acanalado",
     precio: "$32.000"
   },
   {
-    id: 4,
-    nombre: "Pantalon adidas Essential",
-    descripcion: "Essentials 3 tiras  - Negras - 38",
-    precio: "$19.000"
-  },
-  {
-    id: 5,
-    nombre: "Musculosa Dama Verano 2023",
-    descripcion: "Negro - 34",
-    precio: "$14.000"
-  },
-  {
-    id: 6,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
-    precio: "$32.000"
-  },
-  {
-    id: 7,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
-    precio: "$32.000"
-  },
-  {
-    id: 8,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
-    precio: "$32.000"
+    id: 2365,
+    nombre: "Remera UA BASKETBALL LOCK UP para niños",
+    descripcion: "Tejido supersuave - Cuello acanalado",
+    precio: "$12.897"
   }
 ];
 
@@ -84,7 +73,7 @@ function generarFilaProducto(producto) {
   let botonEditar = document.createElement('td');
   botonEditar.innerHTML = `<button 
   id="editar-producto" 
-  class="rounded"
+  class="rounded botones-admin"
   data-bs-toggle="modal" 
   data-bs-target="#exampleModal">Editar</button>`;
   fila.appendChild(botonEditar)
@@ -93,7 +82,7 @@ function generarFilaProducto(producto) {
   })
 
   let botonBorrar = document.createElement('td');
-  botonBorrar.innerHTML = '<button class="rounded">Borrar</button>';
+  botonBorrar.innerHTML = '<button class="rounded botones-admin">Borrar</button>';
   fila.appendChild(botonBorrar)
   botonBorrar.addEventListener('click', function() {
     borrarFilaProducto(producto.id);
@@ -127,74 +116,61 @@ function editarFilaProducto(id, nombre, descripcion, precio) {
   const botonGuardar = document.querySelector('#agregar-producto');
   botonGuardar.textContent = 'Guardar cambios';
   botonGuardar.removeEventListener('click', crearNuevoProducto);
-  botonGuardar.addEventListener('click', guardarCambiosProducto);
+  botonGuardar.addEventListener('click', guardarEditProducto);
 }
 
-function guardarCambiosProducto() {
+function guardarEditProducto() {
+
   const idProducto = document.getElementById('id-producto').value;
+
+  let productoEditado = productos.find(function(producto) {
+    return producto.id === parseInt(idProducto);
+  });
+
   const nombreProducto = document.getElementById('nombre-producto').value;
   const detalleProducto = document.getElementById('detalle-producto').value;
   const precioProducto = document.getElementById('precio-producto').value;
 
-  if (idProducto && nombreProducto && detalleProducto && precioProducto) {
-    const productoExistente = productos.find(function(producto) {
-      return producto.id === parseInt(idProducto);
-    });
+  productoEditado.nombre = nombreProducto;
+  productoEditado.descripcion = detalleProducto;
+  productoEditado.precio = precioProducto;
 
-    if (productoExistente) {
-      productoExistente.id = parseInt(idProducto);
-      productoExistente.nombre = nombreProducto;
-      productoExistente.descripcion = detalleProducto;
-      productoExistente.precio = precioProducto;
-      cargarProductos();
+  cargarProductos();
 
-      alert('Cambios guardados con exito')
+  alert('Cambios realizados correctamente')
 
-      document.getElementById('id-producto').value = '';
-      document.getElementById('nombre-producto').value = '';
-      document.getElementById('detalle-producto').value = '';
-      document.getElementById('precio-producto').value = '';
+  document.getElementById('id-producto').value = '';
+  document.getElementById('nombre-producto').value = '';
+  document.getElementById('detalle-producto').value = '';
+  document.getElementById('precio-producto').value = '';
 
-      const botonGuardar = document.querySelector('#agregar-producto');
-      botonGuardar.textContent = 'Agregar producto';
-      botonGuardar.removeEventListener('click', guardarCambiosProducto);
-      botonGuardar.addEventListener('click', crearNuevoProducto);
-    }
-  } else {
-    alert('Por favor, ingrese todos los datos del producto');
-  }
+  const botonGuardar = document.querySelector('#agregar-producto');
+  botonGuardar.textContent = 'Agregar producto';
+  botonGuardar.removeEventListener('click', guardarEditProducto);
+  botonGuardar.addEventListener('click', crearNuevoProducto);
+
 }
 
 /********************* FUNCION DE BORRAR PRODUCTO ******************/
 
 function borrarFilaProducto(id) {
-  productos = productos.filter(function(producto) {
-    return producto.id !== id;
-  });
-  cargarProductos();
+  let confirmacion = confirm('¿Estas seguro de que quieres borrar este producto?')
+
+  if(confirmacion) {
+    productos = productos.filter(function(producto) {
+      return producto.id !== id;
+    });
+    cargarProductos();
+  } else {
+    return;
+  }
 }
-
-/********************* BOTON DE AGREGAR PRODUCTO ******************/
-
-function crearBotonCrearProducto() {
-  const botonAgregar = document.querySelector('.crear-objeto');
-  botonAgregar.innerHTML = `<button 
-    type="button" 
-    class="btn btn-success" 
-    data-bs-toggle="modal" 
-    data-bs-target="#exampleModal">Agregar producto
-    </button>`;
-
-  guardarNuevoProducto();
-}
-
-crearBotonCrearProducto();
 
 /******************** CREAR OBJETO NUEVO PRODUCTO *****************/
 
 class NuevoProducto {
   constructor(id, nombre, descripcion, precio) {
-    this.id = id;
+    this.id = parseInt(id, 10);
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;
@@ -230,6 +206,8 @@ function crearNuevoProducto(event) {
     document.getElementById('nombre-producto').value = '';
     document.getElementById('detalle-producto').value = '';
     document.getElementById('precio-producto').value = '';
+
+    alert('Producto nuevo cargado con exito')
   } 
   else {
     alert('Por favor, ingrese todos los datos del producto');
@@ -243,133 +221,52 @@ function guardarNuevoProducto() {
   botonAgregar.addEventListener('click', crearNuevoProducto);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Datos de ejemplo de ventas mensuales
-// const ventasMensuales = [15000, 12000, 32000, 19000, 14000, 32000, 32000, 32000];
-
-// // Obtener el elemento canvas del DOM
-// const canvas = document.getElementById('chart');
-
-// // Crear el objeto de gráfico
-// const chart = new Chart(canvas, {
-//   type: 'bar',
-//   data: {
-//     labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto'],
-//     datasets: [{
-//       label: 'Ventas Mensuales',
-//       data: ventasMensuales,
-//       backgroundColor: 'rgba(75, 192, 192, 0.6)'
-//     }]
-//   },
-//   options: {
-//     scales: {
-//       y: {
-//         beginAtZero: true
-//       }
-//     }
-//   }
-// });
-
-// // Datos de ejemplo de visitas
-// const visitas = [
-//   { etiqueta: 'Directo', visitas: 500 },
-//   { etiqueta: 'Redes Sociales', visitas: 200 },
-//   { etiqueta: 'Búsqueda Orgánica', visitas: 300 },
-//   { etiqueta: 'Referencias', visitas: 150 },
-// ];
-
-// // Obtener el elemento canvas del DOM
-// const canvas = document.getElementById('chart2');
-
-// // Crear el objeto de gráfico de torta
-// const chart = new Chart(canvas, {
-//   type: 'pie',
-//   data: {
-//     labels: visitas.map(visita => visita.etiqueta),
-//     datasets: [{
-//       data: visitas.map(visita => visita.visitas),
-//       backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(255, 206, 86, 0.6)'],
-//     }]
-//   }
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Aclaraciones
-
-El appendChild me lo suma al final de todos los objetos
-append nos permite agregar varios hijos a la vez
-
-let ham1 = ""
-let ham2 = ""
-let ham3 = ""
-
-document.querySelector('Clase o ID').append(ham1, ham2, ham3);
-
-
-*/
-
+guardarNuevoProducto();
+
+
+/******************** VENTAS MENSUALES *******************/
+
+const ventasMensuales = [15000, 12000, 32000, 19000, 14000, 32000, 22000, 9000];
+
+const canvasVentas = document.getElementById('chart-ventas');
+
+const chartVentas = new Chart(canvasVentas, {
+  type: 'bar',
+  data: {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto'],
+    datasets: [{
+      label: 'Ventas Mensuales',
+      data: ventasMensuales,
+      backgroundColor: 'rgba(75, 192, 192, 0.6)'
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+/******************** VISITAS *******************/
+
+const visitas = [
+  { etiqueta: 'Directo', visitas: 500 },
+  { etiqueta: 'Redes Sociales', visitas: 200 },
+  { etiqueta: 'Búsqueda', visitas: 300 },
+  { etiqueta: 'Referencias', visitas: 150 }
+];
+
+const canvasVisitas = document.getElementById('chart-visitas');
+
+const chart = new Chart(canvasVisitas, {
+  type: 'pie',
+  data: {
+    labels: visitas.map(visita => visita.etiqueta),
+    datasets: [{
+      data: visitas.map(visita => visita.visitas),
+      backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(255, 206, 86, 0.6)'],
+    }]
+  }
+});

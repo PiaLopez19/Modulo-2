@@ -15,7 +15,8 @@
 
 body {
 	font-family: Arial, sans-serif;
-	margin: 0; background-color: var(--creame-color1);
+	margin: 0;
+	background-color: var(--creame-color1);
 }
 
 
@@ -27,7 +28,17 @@ h1 {
 	background-color: #DADAD8 !important;
 }
 
+.contenidoModal{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
 
+.eliminar-product{
+	cursor: pointer;
+	display: flex;
+	justify-content: end;
+}
 
 .boton-css{
 	width: 20%;
@@ -73,8 +84,4 @@ h1 {
 	background-color: #7c7b7b;
 	padding: 20px 0;
 	text-align: center;
-}
-
-.footer p {
-	margin-bottom: 0;
 }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="description" content="
+    Deporte Urban es una página de ropa deportiva que se ha posicionado como una referencia en el mundo del deporte y la moda urbana. Su objetivo principal es ofrecer a sus clientes prendas de alta calidad, diseñadas tanto para la práctica de actividades físicas como para lucir un estilo moderno y urbano en el día a día"/>
+    <meta name="keywords" content="deporte, urbano, ropa, ropa deportiva"/>
+    <meta name="author" content="Pia Lopez, Lautaro Hidalgo, Farid Ale Ali" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN DEPORTES | Inicio</title>
+<!--Enlace css personalizado-->
+    <link rel="stylesheet" href="css/principal.css">
+<!-- Enlace a Bootstrap v5.3.0 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+   
+</head>
+<body>
+    <!---Inicio nav-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="">
+          <img src="./assets/images/logo.png" alt="logo de la empresa" width="40" height="40" class="d-inline-block align-text-top">
+        </a>
+        <button class=" boton-b navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/nosotros.html">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/login.html">Iniciar sesion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!---Fin nav-->
+
+   <section class="main">
+    <div class="container py-5">
+        <div class="row py-4">
+            <div class="col-lg-7 pt-5">
+              <h1 class="pt-4">Potencia tu estilo activo</h1>
+              <a class="btn btn-secondary p-2 mt-3" href="./pages/error.html" role="button">Más información</a>
+            </div>
+        </div>
+    </div>
+   </section>
+   <section class="product">
+    <div class="container py-5">
+      <div class="row py-5">
+        <div class="col-lg-5 m-auto text-center">
+          <h2>Nuestras novedades</h2>
+        </div>
+      </div>
+      <input type="search" class="form-control mt-3 mx-auto" id="myinput" placeholder="¿Que estas buscando?">
+      <div class="row mt-5 mb-3">
+        <button class="btn btn-outline-secondary col-lg-2 m-1" onclick="filterProduct()">Todo</button>
+        <button class="btn btn-outline-secondary col-lg-3 m-1" onclick="filterProduct(`women`)">Mujer</button>
+        <button class="btn btn-outline-secondary col-lg-3 m-1" onclick="filterProduct(`men`)">Hombre</button>
+        <button class=" btn btn-outline-secondary col-lg-3 m-1" onclick="filterProduct(`child`)">Niños</button>
+      </div>
+      <h3 class="text-danger mt-5 text-center" id="para">No se ha encontrado lo que estas buscando</h3>
+      <div class="row" id="card">
+      </div>
+    </div>
+   </section>
+   <footer class="footer">
+    <div class="container">
+      <p>© 2023 Mi Sitio Web. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+<script defer src="product.js"></script>
+<script defer src="js/main.js"></script>
+</html>

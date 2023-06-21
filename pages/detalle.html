@@ -14,8 +14,10 @@
 <html>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#"><img class=" ms-3 w-25" src="../img/logo.png" alt="logo de la empresa"></a>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/images/logo.png" alt="logo de la empresa" width="40" height="40" class="d-inline-block align-text-top">
+      </a>
       <button class=" boton-b navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,16 +25,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Acerca de</a>
+            <a class="nav-link" href="./nosotros.html">Acerca de</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
+            <a class="nav-link" href="./login.html">Iniciar sesion</a>
           </li>
         </ul>
       </div>
@@ -46,12 +45,11 @@
           <h5 class="modal-title">Tu Carrito</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div id="modalBody" class="d-flex  modal-body">
+        <div id="modalBody" class="d-flex justify-content-center flex-column modal-body">
           
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Comprar</button>
         </div>
       </div>
     </div>
@@ -60,8 +58,8 @@
   <main>
     <div>
         <div class="divCarrito d-flex align-items-center justify-content-end pe-5 py-3">
-          <img class="imgCarrito" src="../img/carrito.png" data-bs-toggle="modal" data-bs-target="#modalCarrito" alt="carrito de compras">
-          <span id="card"></span>
+          <img class="imgCarrito" src="../assets/images/carrito.png" data-bs-toggle="modal" data-bs-target="#modalCarrito" alt="carrito de compras">
+          <span id="card">0</span>
       </div>
     </div>
         <div id="search-product" ></div>
@@ -70,61 +68,14 @@
         </div>
     </div>
 </main>
-
-
-
-
-
-
-
-
-
-<!--   <main class="mt-5 w-100">
-    <div class="d-xl-flex container justify-content-center" id="short-gris">
-        <div class="w-100">
-           <img class="img-detalle w-100 pe-5 mb-5" src="../img/img-short.jpeg" alt="imagen de short">
-        </div>
-      <div class="w-100">
-        <div class="w-100">
-             <h1 class="fs-2 text-start ms-3">Short Project Rock Fleece</h1>
-            <p class="mt-4 text-start ms-3">$14499</p>
-        </div>
-    <hr>
-    <div class="mx-3">
-        <p>Guia de Talles</p>
-        
-            <button class=" mx-2 boton-css btn btn-light border border-black">XS</button>
-            <button class=" mx-2 boton-css btn btn-light border border-black">SM</button>
-            <button class=" mx-2 boton-css btn btn-light border border-black">MD</button>
-            <button class=" mx-2 boton-css btn btn-light border border-black">LG</button>
-        
-        <div class="d-flex justify-content-center">
-           <button class="my-3 mx-3 w-100  btn btn-danger border border-black">Agregar al Carrito</button> 
-        </div>
-        <div class="d-flex justify-content-center">
-          <button class="my-2 mx-3 w-100  btn btn-secondary border border-black">Comprar Ahora</button> 
-        </div>
-    </div>
-    <hr>
-    <div class="ms-3">
-      <h3 id="card"></h3>
-       <h2 class="mb-3">Descripcion del Producto</h2>
-      <p>- Tejido Fleece de mezcla de algodón ligero y ultra cómodo</p>
-      <p>- Suave capa interior que mantiene la calidez y la comodidad</p>
-      <p>- Amplia cintura elástica con revestimiento y cordón exterior</p>
-      <p>- Bolsillos laterales abiertos</p> 
-    </div>
-  </div>
-    </div>
-  </main> -->
   <footer class="footer">
     <div class="container">
       <p>© 2023 Mi Sitio Web. Todos los derechos reservados.</p>
     </div>
   </footer>
   <!-- Enlace a los scripts de Bootstrap v5.3.0  -->
-  <script defer src="../product.js"></script>
-  <script defer src="../script/detalle.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../product.js"></script> 
+  <script defer src="../js/detalle.js"></script>
 </body>
 </html>

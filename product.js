@@ -1,87 +1,107 @@
-let women = [{
-    name: "Remera Under Armour Live GP",
-    price:11.499,
-    id:1236,
-    decription: `- Esta mezcla de algodón super suave, te brinda comodidad durante todo el dia <br>
-                 - Cuello acanalado <br>
-                 - 60% Algodon/40% Polyester <br>
-                 - Ideal para entrenar`,
-    url:'https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dw2af3d4a4/new_images/1369935/195252393151/195252393151-1.jpeg'
-},
-{
-    name: "Short Project Rock Fleece para mujer",
-    price:'$14.499',
+let galeryarray = [
+  {
+      id: 1236,
+      name: `Remera Under Armour Live GP`,
+      src: "assets/images/195252511982-1.jpeg",
+      description: `- Esta mezcla de algodón super suave, te brinda comodidad durante todo el dia <br>
+      - Cuello acanalado <br>
+      - 60% Algodon/40% Polyester <br>
+      - Ideal para entrenar`,
+      price: 11.499,
+      stock: 'Stock Disponible',
+      category: `women`,
+
+  },
+  {
     id: 3256,
-    decription: `- Tejido Fleece de mezcla de algodón ligero y ultra cómodo <br>
-                 - Suave capa interior que mantiene la calidez y la comodidad <br>
-                 - Amplia cintura elástica con revestimiento y cordón exterior <br>
-                 - Bolsillos laterales abiertos`,
-    url:"https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dwa8b37914/new_images/1371371/195252633394/195252633394-1.jpeg"
-},
-{
-    name: "Calzas UA RUSH™ No-Slip Waistband Full-Length para mujer",
-    price:26.999,
-    id: 6589,
-    decription: `- UA RUSH™ es la tecnología infrarroja que refleja la energía del cuerpo para rendir más y recuperarte más rápido <br>
-                  - Material que capilariza el sudor y se seca rápidamente <br>
-                  - Ubicación avanzada de las costuras para eliminar los puntos de presión y los roces <br>
-                  - Cintura alta UA No-Slip para una protección y una sujeción óptimas que se adapta a todos tus movimientos <br>
-                  - Bolsillo lateral profundo`,
-    url:"https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dwdae74d91/new_images/1371515/195252511982/195252511982-1.jpeg"
-}]
+    name: `Short Project Rock Fleece para mujer`,
+    src:"assets/images/img-short.jpeg" ,
+    description: `- Tejido Fleece de mezcla de algodón ligero y ultra cómodo
+    - Suave capa interior que mantiene la calidez y la comodidad
+    - Amplia cintura elástica con revestimiento y cordón exterior
+    - Bolsillos laterales abiertos`,
+    price:14.499 ,
+    stock: 'Stock Disponible', 
+    category: `women`, 
+  },
+  {
+      id:6589 ,
+      name: `Calzas UA RUSH™ No-Slip Waistband Full-Length para mujer`,
+      src: "assets/images/calza.jpeg",
+      description: ` - UA RUSH™ es la tecnología infrarroja que refleja la energía del cuerpo para rendir más y recuperarte más rápido
+      - Material que capilariza el sudor y se seca rápidamente
+      - Ubicación avanzada de las costuras para eliminar los puntos de presión y los roces
+      - Cintura alta UA No-Slip para una protección y una sujeción óptimas que se adapta a todos tus movimientos
+      - Bolsillo lateral profundo`,
+      price:26.999,
+      stock: 'Stock No Disponible',
+      category: `women`,  
+    },
+    {
+      id:2365,
+      name: `Pantalón corto UA Rival Fleece Graphic para Hombre`,
+      src:"assets/images/shotm1.jpeg" ,
+      description: `- Tejido Fleece de mezcla de algodón ligero y ultracómodo con interior cepillado para    mantenerte abrigado y cómodo
+      - Cintura elástica recubierta con cordón de ajuste externo
+      - Bolsillos abiertos para las manos y bolsillo trasero seguro con cierre a presión`,
+      price:14.4999,
+      stock: 'Stock Disponible',   
+      category: `men`,
 
-let man = [{
-    name: "Pantalón corto UA Rival Fleece Graphic para Hombre",
-    price:14.499,
-    id: 2365,
-    decription: `- Tejido Fleece de mezcla de algodón ligero y ultracómodo con interior cepillado para mantenerte abrigado y cómodo <br>
-                 - Cintura elástica recubierta con cordón de ajuste externo <br>
-                 - Bolsillos abiertos para las manos y bolsillo trasero seguro con cierre a presión`,
-    url:"https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dw2af3d4a4/new_images/1369935/195252393151/195252393151-1.jpeg"
-},
-{
-    name: "Remera UA RUSH™ Energy para hombre",
-    price:16.499,
-    id: 9856,
-    decription: `- Tejido Fleece de mezcla de algodón ligero y ultra cómodo <br>
-                 - Suave capa interior que mantiene la calidez y la comodidad <br>
-                 - Amplia cintura elástica con revestimiento y cordón exterior <br>
-                 - Bolsillos laterales abiertos`,
-    url:"https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dw0a2642a6/new_images/1366138/195253832802/195253832802-1.jpeg"
-},
-{
-    name: "Camiseta Titular Argentina 3 Estrellas 2022",
-    price:28.999,
-    id: 8649,
-    decription: ` - UA RUSH™ es la tecnología infrarroja que refleja la energía del cuerpo para rendir más y recuperarte más rápido <br>
-                  - UA RUSH™ es una tecnología infrarroja que refleja la energía de tu cuerpo para ayudarte a trabajar más duro y recuperarte más rápido <br>
-                  - El material elástico en 4 direcciones se mueve mejor en todas las direcciones <br>
-                  - Dobladillo con ventilación lateral`,
-    url:"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/02f90f6570a148c1a136af7300dc1ac4_9366/Camiseta_titular_Argentina_3_estrellas_2022_Blanco_IB3593_21_model.jpg"
-}]
-
-let child = [{
-    name: "Remera de entrenamiento Under Armour Sportstyle Logo para niños",
-    price:9.999,
-    id: 5698,
-    decription: `- Esta mezcla de algodón super suave, te brinda comodidad durante todo el dia <br>
-                 - Cuello acanalado <br>
-                 - 60% Algodon/40% Polyester`,
-    url:"https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dw82f7f0d3/new_images/1360980/195252506612/195252506612-1.jpeg"
-},
-{
-    name: "Remera manga corta UA Multilogo Short Sleeve para niño",
-    price:17.599,
-    id: 9695,
-    decription: `- Tejido supersuave de mezcla de algodón que proporciona comodidad durante todo el día. <br>
-                 - Cuello acanaladoTejido supersuave de mezcla de algodón que proporciona comodidad durante todo el día. <br>
-                 - Cuello acanalado`,
-    url:"https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dwcfd3e218/new_images/1370219/195252647681/195252647681-1.jpeg"
-},
-{
-    name: "Remera UA BASKETBALL LOCK UP para niños",
-    price:12.897,
-    id: 2365,
-    decription: ` - Tejido supersuave de mezcla de algodón que proporciona comodidad durante todo el día.`,
-    url:"https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dw5961e92d/new_images/1382432/1382432-001-YSM/1382432-001-YSM-1.jpeg"
-}]
+    },
+    {
+      id: 9856,
+      name: `Remera UA RUSH™ Energy para hombre`,
+      src:"assets/images/rem.jpeg" ,
+      description: `- Tejido Fleece de mezcla de algodón ligero y ultra cómodo
+      - Suave capa interior que mantiene la calidez y la comodidad
+      - Amplia cintura elástica con revestimiento y cordón exterior
+      - Bolsillos laterales abiertos`,
+      price:16.499,
+      stock: 'Stock Disponible', 
+      category: `men`, 
+    },
+    {
+      id: 8649 ,
+      name: `Camiseta Titular Argentina 3 Estrellas 2022`,
+      src: "assets/images/arg.jpg",
+      description:` - UA RUSH™ es la tecnología infrarroja que refleja la energía del cuerpo para rendir más y recuperarte más rápido
+      - UA RUSH™ es una tecnología infrarroja que refleja la energía de tu cuerpo para ayudarte a trabajar más duro y recuperarte más rápido
+      - El material elástico en 4 direcciones se mueve mejor en todas las direcciones
+      - Dobladillo con ventilación lateral`, 
+      price:28.999, 
+      stock: 'Stock No Disponible', 
+      category: `men`,
+    },
+    {
+      id: 5698,
+      name: `Remera de entrenamiento Under Armour Sportstyle Logo para niños`,
+      src:"assets/images/remchi.jpeg" ,
+      description: `- Esta mezcla de algodón super suave, te brinda comodidad durante todo el dia
+      - Cuello acanalado
+      - 60% Algodon/40% Polyester`,
+      price:9.999,
+      stock: 'Stock Disponible', 
+      category: `child`,
+    },
+    {
+      id: 9695,
+      name:`Remera manga corta UA Multilogo Short Sleeve para niño` ,
+      src: "assets/images/remchil2.jpeg",
+      description: `- Tejido supersuave de mezcla de algodón que proporciona comodidad durante todo el día.
+      - Cuello acanaladoTejido supersuave de mezcla de algodón que proporciona comodidad durante todo el día.
+      - Cuello acanalado`,
+      price:17.599,
+      stock: 'Stock Disponible',  
+      category: `child`, 
+    },
+    {
+      id:2365 ,
+      name:`Remera UA BASKETBALL LOCK UP para niños` ,
+      src:"assets/images/remchil3.jpeg" ,
+      description: ` - Tejido supersuave de mezcla de algodón que proporciona comodidad durante todo el día.`,
+      price:12.897,
+      stock: 'Stock Disponible',  
+      category: `child`, 
+    },
+]
