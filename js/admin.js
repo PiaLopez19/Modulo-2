@@ -2,52 +2,58 @@
 
 let productos = [
   {
-    id: 1,
-    nombre: "Camiseta de la Seleccion Argentina",
-    descripcion: "Con 3 estrellas - Celesta y blanca - Talle M",
-    precio: "$15.000"
+    id: 1236,
+    nombre: "Remera Under Armour Live GPs",
+    descripcion: "Cuello acanalado - 60%A/40%P",
+    precio: "$11.499"
   },
   {
-    id: 2,
-    nombre: "Nike Dri-FIT Phenom Elite",
-    descripcion: "Pantalon largo - Negro - Talle 40",
-    precio: "$12.000"
+    id: 3256,
+    nombre: "Short Project Rock Fleece Mujer",
+    descripcion: "Tejido Fleece - Amplia cintura elástica",
+    precio: "$14.499"
   },
   {
-    id: 3,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
+    id: 6589,
+    nombre: "Calzas UA RUSH™ No-Slip Waistband Full-Length",
+    descripcion: "Capilariza el sudor y se seca rapido",
+    precio: "$26.999"
+  },
+  {
+    id: 2365,
+    nombre: "Pantalon corto UA Rival Fleece Graphic para Hombre",
+    descripcion: "Cintura elástica - Tejido Fleece - Bolsillos abiertos",
+    precio: "$14.499"
+  },
+  {
+    id: 9856,
+    nombre: "Remera UA RUSH™ Energy para hombre",
+    descripcion: "Tejido Fleece - Suave - Amplia",
+    precio: "$16.499"
+  },
+  {
+    id: 8649,
+    nombre: "Camiseta Titular Argentina 3 Estrellas 2022",
+    descripcion: "Tecnología infrarroja - Material elástico",
+    precio: "$28.999"
+  },
+  {
+    id: 5698,
+    nombre: "Remera de entrenamiento Under Armour Sportstyle",
+    descripcion: "Cuello acanalado - Algodón super suave",
+    precio: "$9.999"
+  },
+  {
+    id: 9695,
+    nombre: "Remera manga corta UA Multilogo Short Sleeve",
+    descripcion: "Tejido supersuave - Cuello acanalado",
     precio: "$32.000"
   },
   {
-    id: 4,
-    nombre: "Pantalon adidas Essential",
-    descripcion: "Essentials 3 tiras  - Negras - 38",
-    precio: "$19.000"
-  },
-  {
-    id: 5,
-    nombre: "Musculosa Dama Verano 2023",
-    descripcion: "Negro - 34",
-    precio: "$14.000"
-  },
-  {
-    id: 6,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
-    precio: "$32.000"
-  },
-  {
-    id: 7,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
-    precio: "$32.000"
-  },
-  {
-    id: 8,
-    nombre: "Zapatillas Air Max",
-    descripcion: "Estilo Genome - Blancas - 42",
-    precio: "$32.000"
+    id: 2365,
+    nombre: "Remera UA BASKETBALL LOCK UP para niños",
+    descripcion: "Tejido supersuave - Cuello acanalado",
+    precio: "$12.897"
   }
 ];
 
