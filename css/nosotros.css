@@ -6,7 +6,7 @@
 }
 
 body{
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,12 +15,24 @@ body{
 
 .img-section {
     
-    background: url(../assets/images/wp3325889.jpg)no-repeat;
+    background: url('../assets/images/wp3325889.jpg')no-repeat;
+    object-fit: cover;
     background-size: cover;
-    height: 100vh;
-    background-position: 50% 100% ;
+    min-height: 100vh;
+    background-position: 50% 50% ;
     width: 100%;
 }
+
+ .nuestro-equipo{
+    padding: 1%;
+    background-color: #7c7b7b;
+} 
+ 
+/* .section-img {
+    background-color: var(#DADAD8 );
+    background-size: cover;
+} */
+
 
 h1{
     font-size: 3rem;
