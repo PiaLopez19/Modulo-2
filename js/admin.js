@@ -1,3 +1,43 @@
+/**************** CHECKEO SI ESTA LOGEADO COMO ADMINISTRADOR *******************/
+
+function checkeoAdmin() {
+
+  let admin = JSON.parse(localStorage.getItem("useradmin"))
+
+  if(admin === false) {
+    alert('No tienes acceso a esta pagina')
+    window.location.href = "../pages/login.html"
+  }
+
+  return navbarLogeado()
+}
+
+checkeoAdmin();
+
+/**************** CAMBIO DE NAVBAR AL ESTAR LOGEADO *******************/
+
+function navbarLogeado() {
+  const botonLogin = document.querySelector('#login-navbar');
+  botonLogin.innerHTML = `
+  <div id="adminLogin">
+    Bienvenido administrador
+    <button type="button" class="btn m-0 ms-2 p-0 btn-danger">Cerrar sesion</button>
+  </div>`
+
+  botonLogin.removeAttribute('href');
+  botonLogin.addEventListener('click', cerrarSesion);
+}
+
+/**************** FUNCION CERRAR SESION *******************/
+
+function cerrarSesion() {
+  let admin = false;
+  localStorage.setItem("useradmin", JSON.stringify(admin));
+  window.location.href = "../pages/login.html"
+
+  alert('Has cerrado sesion correctamente')
+}
+
 /**************** PRODUCTOS *******************/
 
 let productos = [

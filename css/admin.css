@@ -18,6 +18,18 @@ body {
 	background-color: var(--creame-color4);
 }
 
+#adminLogin {
+	display: flex;
+	flex-direction: row;
+	padding: 0;
+	margin: 0;
+}
+
+/* .boton-cerrar-sesion {
+	margin-left: 5px;
+	background-color: red;
+} */
+
 /******* Parte MAIN de la pagina ********/
 
 /* Titulo general */
